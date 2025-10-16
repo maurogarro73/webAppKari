@@ -1,15 +1,15 @@
-"use client"
+'use client';
 
-import { MessageCircle } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { MessageCircle } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 export default function WhatsAppFloat() {
-  const whatsappNumber = "5491123456789"
-  const whatsappMessage = "Hola, me gustaría consultar sobre servicios legales."
+  const whatsappNumber = '5492954605557';
+  const whatsappMessage = 'Hola, necesito asesoramiento legal y me gustaría coordinar una cita.';
 
   const handleClick = () => {
-    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`, "_blank")
-  }
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+  };
 
   return (
     <Button
@@ -20,5 +20,5 @@ export default function WhatsAppFloat() {
     >
       <MessageCircle className="h-7 w-7 text-white" />
     </Button>
-  )
+  );
 }

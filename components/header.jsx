@@ -32,31 +32,31 @@ export default function Header() {
           <nav className="hidden md:flex items-center gap-8">
             <button
               onClick={() => scrollToSection('home')}
-              className="text-[#003366] hover:text-[#0055aa] transition-colors font-medium"
+              className="text-[#003366] hover:text-[#0055aa] transition-colors font-medium cursor-pointer"
             >
               Inicio
             </button>
             <button
               onClick={() => scrollToSection('about')}
-              className="text-[#003366] hover:text-[#0055aa] transition-colors font-medium"
+              className="text-[#003366] hover:text-[#0055aa] transition-colors font-medium cursor-pointer"
             >
               Sobre mi
             </button>
             <button
               onClick={() => scrollToSection('services')}
-              className="text-[#003366] hover:text-[#0055aa] transition-colors font-medium"
+              className="text-[#003366] hover:text-[#0055aa] transition-colors font-medium cursor-pointer"
             >
               Servicios
             </button>
             <button
               onClick={() => scrollToSection('location')}
-              className="text-[#003366] hover:text-[#0055aa] transition-colors font-medium"
+              className="text-[#003366] hover:text-[#0055aa] transition-colors font-medium cursor-pointer"
             >
               Ubicación
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="text-[#003366] hover:text-[#0055aa] transition-colors font-medium"
+              className="text-[#003366] hover:text-[#0055aa] transition-colors font-medium cursor-pointer"
             >
               Contacto
             </button>

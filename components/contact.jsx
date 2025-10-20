@@ -41,7 +41,7 @@ export default function Contact() {
           <Button
             onClick={handleWhatsAppClick}
             size="lg"
-            className="bg-white text-[#003366] hover:bg-gray-100 px-8 py-6 text-lg transition-all hover:scale-105"
+            className="bg-white text-[#003366] hover:bg-gray-100 px-8 py-6 text-lg transition-all hover:scale-105 cursor-pointer"
           >
             <MessageCircle className="mr-2 h-5 w-5" />
             Contactame via WhatsApp

@@ -1,10 +1,2 @@
-[build]
-  command = "npm run build"
-  publish = ".next"
-
 [build.environment]
-  NODE_VERSION = "20"
-  TAILWIND_MODE = "build"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+NODE_VERSION = "22"

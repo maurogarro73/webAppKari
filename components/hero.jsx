@@ -35,11 +35,7 @@ export default function Hero() {
           <div className="flex-1 flex justify-center">
             <div className="relative">
               <div className="absolute inset-0 bg-[#003366] rounded-lg transform rotate-3"></div>
-              <img
-                src="/professional-female-attorney.png"
-                alt="Attorney"
-                className="relative rounded-lg shadow-2xl w-full max-w-md"
-              />
+              <img src="/personal.jpg" alt="Attorney" className="relative rounded-lg shadow-2xl w-full max-w-md" />
             </div>
           </div>
         </div>

@@ -21,7 +21,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <img src="/law-firm-logo-scales-of-justice.jpg" alt="Estudio Jurídico Mendiara" className="h-12 w-12" />
+            <img src="/logo.png" alt="Estudio Jurídico Mendiara" className="h-12 w-12" />
             <div className="flex flex-col">
               <span className="font-serif text-lg font-bold text-[#003366]">Estudio Jurídico</span>
               <span className="font-serif text-sm text-[#003366]">Mendiara</span>

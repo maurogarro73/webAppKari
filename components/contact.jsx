@@ -8,7 +8,15 @@ export default function Contact() {
   const whatsappMessage = 'Hola, necesito asesoramiento legal y me gustaría coordinar una cita.';
 
   const handleWhatsAppClick = () => {
+    // Abre WhatsApp
     window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+
+    // Envía evento de conversión a Google Ads
+    if (typeof window.gtag !== 'undefined') {
+      window.gtag('event', 'conversion', {
+        send_to: 'AW-17674436925/GUz4CLLWj7MbEL2C6utB', // 👈 tu ID y label de conversión
+      });
+    }
   };
 
   return (

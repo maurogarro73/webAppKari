@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import { Analytics } from '@vercel/analytics/next';
+import Script from 'next/script';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -63,6 +64,16 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
+        {/* Google Ads Tag */}
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-17674436925" />
+        <Script id="google-ads">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17674436925');
+          `}
+        </Script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

@@ -10,6 +10,8 @@ const nextConfig = {
     unoptimized: true,
   },
   devIndicators: false,
+  reactStrictMode: true,
+  trailingSlash: true,
 };
 
 export default nextConfig;

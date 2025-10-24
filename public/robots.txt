@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://estudiojuridicomendiara.com.ar
+
+# Sitemaps
+Sitemap: https://estudiojuridicomendiara.com.ar/sitemap.xml

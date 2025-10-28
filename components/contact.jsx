@@ -15,7 +15,7 @@ export default function Contact() {
     // Envía evento de conversión a Google Ads
     if (typeof window.gtag !== 'undefined') {
       window.gtag('event', 'conversion', {
-        send_to: 'AW-17674436925/GUz4CLLWj7MbEL2C6utB', // 👈 tu ID y label de conversión
+        send_to: 'AW-17674436925/GUz4CLLWj7MbEL2C6utB',
       });
     }
   };

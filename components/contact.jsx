@@ -2,6 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { MessageCircle, Phone, Mail } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 
 export default function Contact() {
   const whatsappNumber = '5492954605557';
@@ -49,10 +50,10 @@ export default function Contact() {
           <Button
             onClick={handleWhatsAppClick}
             size="lg"
-            className="bg-white text-[#003366] hover:bg-gray-100 px-8 py-6 text-lg transition-all hover:scale-105 cursor-pointer"
+            className="bg-white text-[#003366] hover:bg-gray-100 px-8 py-6 text-lg transition-all hover:scale-105 cursor-pointer flex items-center justify-center mx-auto"
           >
-            <MessageCircle className="mr-2 h-5 w-5" />
-            Contactame via WhatsApp
+            <FaWhatsapp className="mr-2 h-5 w-5 text-green-500" />
+            Contactame vía WhatsApp
           </Button>
         </div>
       </div>

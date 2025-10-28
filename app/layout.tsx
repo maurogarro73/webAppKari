@@ -29,7 +29,9 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL('https://estudiojuridicomendiara.com.ar'),
   icons: {
-    icon: '/logo.png',
+    icon: '/logo-512.png',
+    shortcut: '/favicon.ico',
+    apple: '/logo-512.png',
   },
   openGraph: {
     title: 'Estudio Jurídico Mendiara',

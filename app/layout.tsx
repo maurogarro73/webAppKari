@@ -82,12 +82,15 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'LegalService',
+              '@id': 'https://estudiojuridicomendiara.com.ar/#organization',
               name: 'Estudio Jurídico Mendiara',
               url: 'https://estudiojuridicomendiara.com.ar',
               logo: 'https://estudiojuridicomendiara.com.ar/logo.png',
               image: 'https://estudiojuridicomendiara.com.ar/logo.png',
               description:
                 'Servicios legales expertos en derecho de familia, civil y laboral. Soluciones legales en las que podés confiar.',
+              telephone: '+54 9 2954 605557',
+              priceRange: '$$',
               address: {
                 '@type': 'PostalAddress',
                 streetAddress: 'Bartolomé Mitre 350',
@@ -97,9 +100,21 @@ export default function RootLayout({
                 addressCountry: 'AR',
               },
               areaServed: 'Argentina',
-              telephone: '+54 9 2954 605557',
               openingHours: 'Mo-Fr 09:00-18:00',
-              priceRange: '$$',
+              geo: {
+                '@type': 'GeoCoordinates',
+                latitude: -36.6208,
+                longitude: -64.2906,
+              },
+              founder: {
+                '@type': 'Person',
+                name: 'Karina Lucía Álvarez Mendiara',
+                jobTitle: 'Abogada',
+                sameAs: [
+                  'https://www.instagram.com/abogada_alvarezmendiarakarina',
+                  'https://www.linkedin.com/in/karinaluciaalvarezmendiara',
+                ],
+              },
               sameAs: [
                 'https://www.instagram.com/abogada_alvarezmendiarakarina',
                 'https://www.linkedin.com/in/karinaluciaalvarezmendiara',

@@ -7,11 +7,11 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Estudio Jurídico Mendiara',
+    default: 'Estudio Jurídico Mendiara | Derecho de Familia, Civil y Laboral',
     template: '%s | Estudio Jurídico Mendiara',
   },
   description:
-    'Asesoramiento legal integral en derecho de familia, civil, laboral e inmobiliario. Atención profesional en Santa Rosa, La Pampa.',
+    'Estudio Jurídico Mendiara en Santa Rosa, La Pampa. Especialistas en derecho de familia, civil, laboral e inmobiliario con atención personalizada y cercana.',
   generator: 'maurogarro.dev',
   keywords: [
     'abogada',
@@ -23,27 +23,30 @@ export const metadata: Metadata = {
     'derecho civil',
     'derecho laboral',
     'abogada Mendiara',
+    'Santa Rosa',
+    'Estudio Jurídico Mendiara',
+    'abogada en La Pampa',
   ],
   alternates: {
     canonical: 'https://estudiojuridicomendiara.com.ar',
   },
   metadataBase: new URL('https://estudiojuridicomendiara.com.ar'),
   icons: {
-    icon: '/favicon.ico',
+    icon: [{ url: '/favicon.ico' }, { url: '/logo-512.png', type: 'image/png', sizes: '512x512' }],
     shortcut: '/favicon.ico',
-    apple: '/favicon.ico',
+    apple: '/logo-512.png',
   },
   openGraph: {
-    title: 'Estudio Jurídico Mendiara',
+    title: 'Estudio Jurídico Mendiara | Derecho de Familia, Civil y Laboral',
     description:
-      'Estudio jurídico especializado en derecho de familia, civil y laboral. Atención personalizada en Santa Rosa, La Pampa.',
+      'Estudio jurídico especializado en derecho de familia, civil, laboral e inmobiliario. Atención personalizada en Santa Rosa, La Pampa.',
     url: 'https://estudiojuridicomendiara.com.ar',
     siteName: 'Estudio Jurídico Mendiara',
     images: [
       {
-        url: '/logo.png', // 👉 usá una imagen 1200x630 optimizada (no el logo)
-        width: 1200,
-        height: 630,
+        url: 'https://estudiojuridicomendiara.com.ar/logo-512.png',
+        width: 512,
+        height: 512,
         alt: 'Estudio Jurídico Mendiara - Asesoramiento Legal',
       },
     ],
@@ -52,9 +55,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Estudio Jurídico Mendiara',
-    description: 'Asesoramiento legal integral y profesional. Derecho de familia, civil y laboral en Santa Rosa, La Pampa.',
-    images: ['/logo.png'],
+    title: 'Estudio Jurídico Mendiara | Derecho de Familia, Civil y Laboral',
+    description:
+      'Asesoramiento legal integral y profesional. Derecho de familia, civil, laboral e inmobiliario en Santa Rosa, La Pampa.',
+    images: ['https://estudiojuridicomendiara.com.ar/logo-512.png'],
   },
 };
 
@@ -85,11 +89,12 @@ export default function RootLayout({
               '@id': 'https://estudiojuridicomendiara.com.ar/#organization',
               name: 'Estudio Jurídico Mendiara',
               url: 'https://estudiojuridicomendiara.com.ar',
-              logo: 'https://estudiojuridicomendiara.com.ar/logo.png',
-              image: 'https://estudiojuridicomendiara.com.ar/logo.png',
+              logo: 'https://estudiojuridicomendiara.com.ar/logo-512.png',
+              image: 'https://estudiojuridicomendiara.com.ar/logo-512.png',
               description:
-                'Servicios legales expertos en derecho de familia, civil y laboral. Soluciones legales en las que podés confiar.',
+                'Servicios legales expertos en derecho de familia, civil, laboral e inmobiliario en Santa Rosa, La Pampa. Soluciones legales confiables y cercanas.',
               telephone: '+54 9 2954 605557',
+              email: 'estudiojuridicomendiara@gmail.com',
               priceRange: '$$',
               address: {
                 '@type': 'PostalAddress',
@@ -99,13 +104,21 @@ export default function RootLayout({
                 postalCode: '6300',
                 addressCountry: 'AR',
               },
-              areaServed: 'Argentina',
-              openingHours: 'Mo-Fr 09:00-18:00',
+              areaServed: ['Argentina', 'La Pampa', 'Santa Rosa'],
+              openingHoursSpecification: [
+                {
+                  '@type': 'OpeningHoursSpecification',
+                  dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+                  opens: '09:00',
+                  closes: '18:00',
+                },
+              ],
               geo: {
                 '@type': 'GeoCoordinates',
                 latitude: -36.6208,
                 longitude: -64.2906,
               },
+              knowsAbout: ['derecho de familia', 'derecho civil', 'derecho laboral', 'derecho inmobiliario'],
               founder: {
                 '@type': 'Person',
                 name: 'Karina Lucía Álvarez Mendiara',
@@ -120,6 +133,27 @@ export default function RootLayout({
                 'https://www.linkedin.com/in/karinaluciaalvarezmendiara',
               ],
               hasMap: 'https://www.google.com/maps?q=Bartolome+Mitre+350,+Santa+Rosa,+La+Pampa',
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              url: 'https://estudiojuridicomendiara.com.ar',
+              name: 'Estudio Jurídico Mendiara',
+              inLanguage: 'es-AR',
+              publisher: {
+                '@type': 'Organization',
+                name: 'Estudio Jurídico Mendiara',
+                url: 'https://estudiojuridicomendiara.com.ar',
+                logo: {
+                  '@type': 'ImageObject',
+                  url: 'https://estudiojuridicomendiara.com.ar/logo-512.png',
+                },
+              },
             }),
           }}
         />

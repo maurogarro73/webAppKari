@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { FaYoutube, FaInstagram } from 'react-icons/fa';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -60,6 +61,25 @@ export default function Header() {
             >
               Contacto
             </button>
+
+            <div className="flex items-center gap-4 ml-4">
+              <a
+                href="https://youtube.com/tuusuario"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#003366] hover:text-[#0055aa] transition-colors"
+              >
+                <FaYoutube size={22} />
+              </a>
+              <a
+                href="https://instagram.com/tuusuario"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#003366] hover:text-[#0055aa] transition-colors"
+              >
+                <FaInstagram size={22} />
+              </a>
+            </div>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -101,6 +121,24 @@ export default function Header() {
             >
               Contacto
             </button>
+            <div className="flex items-center gap-6 mt-2">
+              <a
+                href="https://youtube.com/tuusuario"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#003366] hover:text-[#0055aa]"
+              >
+                <FaYoutube size={26} />
+              </a>
+              <a
+                href="https://instagram.com/tuusuario"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#003366] hover:text-[#0055aa]"
+              >
+                <FaInstagram size={26} />
+              </a>
+            </div>
           </nav>
         )}
       </div>

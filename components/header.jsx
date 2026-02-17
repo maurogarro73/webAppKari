@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { FaYoutube, FaInstagram } from 'react-icons/fa';
+import Link from 'next/link';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -61,6 +62,10 @@ export default function Header() {
             >
               Contacto
             </button>
+
+            <Link href="/noticias" className="text-[#003366] hover:text-[#0055aa] transition-colors font-medium cursor-pointer">
+              Noticias
+            </Link>
 
             <div className="flex items-center gap-4 ml-4">
               <a
@@ -121,6 +126,15 @@ export default function Header() {
             >
               Contacto
             </button>
+
+            <Link
+              href="/noticias"
+              className="text-[#003366] hover:text-[#0055aa] transition-colors font-medium text-left"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Noticias
+            </Link>
+
             <div className="flex items-center gap-6 mt-2">
               <a
                 href="https://youtube.com/tuusuario"

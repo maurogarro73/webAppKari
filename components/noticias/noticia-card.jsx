@@ -5,7 +5,24 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 
 export function NoticiaCard({ slug, title, description, date, cover, tags }) {
-  const formattedDate = new Date(date).toLocaleDateString('es-AR', {
+  const toLocalDate = (value) => {
+    // Si ya es Date, listo
+    if (value instanceof Date) return value;
+
+    // Si viene como número (timestamp)
+    if (typeof value === 'number') return new Date(value);
+
+    // Si viene como string "YYYY-MM-DD"
+    if (typeof value === 'string') {
+      const [y, m, d] = value.split('-').map(Number);
+      return new Date(y, m - 1, d); // local
+    }
+
+    // Fallback
+    return new Date(String(value));
+  };
+
+  const formattedDate = toLocalDate(date).toLocaleDateString('es-AR', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',

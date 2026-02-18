@@ -69,7 +69,7 @@ export default function Header() {
 
             <div className="flex items-center gap-4 ml-4">
               <a
-                href="https://youtube.com/tuusuario"
+                href="https://www.youtube.com/@karinaluciaalvarezmendiara3813"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#003366] hover:text-[#0055aa] transition-colors"
@@ -77,7 +77,7 @@ export default function Header() {
                 <FaYoutube size={22} />
               </a>
               <a
-                href="https://instagram.com/tuusuario"
+                href="https://www.instagram.com/abogada_alvarezmendiarakarina"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#003366] hover:text-[#0055aa] transition-colors"
@@ -137,7 +137,7 @@ export default function Header() {
 
             <div className="flex items-center gap-6 mt-2">
               <a
-                href="https://youtube.com/tuusuario"
+                href="https://www.youtube.com/@karinaluciaalvarezmendiara3813"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#003366] hover:text-[#0055aa]"
@@ -145,7 +145,7 @@ export default function Header() {
                 <FaYoutube size={26} />
               </a>
               <a
-                href="https://instagram.com/tuusuario"
+                href="https://www.instagram.com/abogada_alvarezmendiarakarina"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#003366] hover:text-[#0055aa]"

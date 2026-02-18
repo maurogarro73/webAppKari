@@ -30,7 +30,22 @@ export default async function NoticiaDetailPage({ params }) {
 
   if (!noticia) notFound();
 
-  const formattedDate = new Date(noticia.date).toLocaleDateString('es-AR', {
+  const toLocalDate = (value) => {
+    if (value instanceof Date) return value;
+    if (typeof value === 'number') return new Date(value);
+
+    if (typeof value === 'string') {
+      // Si viene como "YYYY-MM-DD", construimos fecha local (sin UTC shift)
+      const m = value.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+      if (m) return new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
+      // Si viene con hora o formato distinto, fallback
+      return new Date(value);
+    }
+
+    return new Date(String(value));
+  };
+
+  const formattedDate = toLocalDate(noticia.date).toLocaleDateString('es-AR', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',

@@ -14,9 +14,11 @@ export default function NoticiasPage() {
     <main className="min-h-screen bg-background">
       <section className="bg-[#0055aa] py-12 text-primary-foreground">
         <div className="container mx-auto px-4">
-          <h1 className="text-3xl font-bold md:text-4xl">Noticias</h1>
+          <h1 className="text-3xl font-bold md:text-4xl">Intervenciones profesionales en medios</h1>
           <p className="mt-2 max-w-2xl text-primary-foreground/80">
-            Casos y publicaciones con resumen propio y enlaces a las fuentes originales.
+            En esta sección se reúnen apariciones periodísticas y publicaciones públicas vinculadas a casos en los que el Estudio
+            interviene profesionalmente. Los resúmenes se elaboran a partir de información publicada por los medios, respetando la
+            confidencialidad y el estado de cada proceso.
           </p>
         </div>
       </section>

@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { FaYoutube, FaInstagram } from 'react-icons/fa';
+import Link from 'next/link';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -60,6 +62,29 @@ export default function Header() {
             >
               Contacto
             </button>
+
+            <Link href="/noticias" className="text-[#003366] hover:text-[#0055aa] transition-colors font-medium cursor-pointer">
+              Noticias
+            </Link>
+
+            <div className="flex items-center gap-4 ml-4">
+              <a
+                href="https://www.youtube.com/@karinaluciaalvarezmendiara3813"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#003366] hover:text-[#0055aa] transition-colors"
+              >
+                <FaYoutube size={22} />
+              </a>
+              <a
+                href="https://www.instagram.com/abogada_alvarezmendiarakarina"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#003366] hover:text-[#0055aa] transition-colors"
+              >
+                <FaInstagram size={22} />
+              </a>
+            </div>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -101,6 +126,33 @@ export default function Header() {
             >
               Contacto
             </button>
+
+            <Link
+              href="/noticias"
+              className="text-[#003366] hover:text-[#0055aa] transition-colors font-medium text-left"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Noticias
+            </Link>
+
+            <div className="flex items-center gap-6 mt-2">
+              <a
+                href="https://www.youtube.com/@karinaluciaalvarezmendiara3813"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#003366] hover:text-[#0055aa]"
+              >
+                <FaYoutube size={26} />
+              </a>
+              <a
+                href="https://www.instagram.com/abogada_alvarezmendiarakarina"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#003366] hover:text-[#0055aa]"
+              >
+                <FaInstagram size={26} />
+              </a>
+            </div>
           </nav>
         )}
       </div>

@@ -30,12 +30,6 @@ export default function NoticiasPage() {
       </section>
 
       <section className="container mx-auto px-4 py-12">
-        <div className="mb-8">
-          <Link href="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-            ← Volver al inicio
-          </Link>
-        </div>
-
         <NoticiasSearch noticias={noticias} />
       </section>
     </main>

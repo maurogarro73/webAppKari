@@ -96,7 +96,6 @@ export default async function NoticiaDetailPage({ params }) {
         )}
 
         <MarkdownContent content={noticia.content} />
-
         <NoticiaSources sources={noticia.sources} />
         <NoticiaVideos videos={noticia.youtube} />
       </article>

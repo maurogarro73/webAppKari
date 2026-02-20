@@ -24,8 +24,7 @@ export default function NoticiasPage() {
           <h1 className="text-3xl font-bold md:text-4xl">Intervenciones profesionales en medios</h1>
           <p className="mt-2 max-w-2xl text-primary-foreground/80">
             En esta sección se reúnen apariciones periodísticas y publicaciones públicas vinculadas a casos en los que el Estudio
-            interviene profesionalmente. Los resúmenes se elaboran a partir de información publicada por los medios, respetando la
-            confidencialidad y el estado de cada proceso.
+            interviene profesionalmente.
           </p>
         </div>
       </section>

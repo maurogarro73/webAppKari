@@ -9,7 +9,7 @@ export default function About() {
 
           <div className="prose prose-lg max-w-none text-gray-600 mb-12">
             <p className="leading-relaxed mb-6">
-              Soy <strong>Kariana Lucía Alvarez Mendiara</strong>, abogada con más de 10 años de experiencia en el ejercicio
+              Soy <strong>Karina Lucía Alvarez Mendiara</strong>, abogada con más de 10 años de experiencia en el ejercicio
               profesional. Continúo con orgullo el legado familiar de <strong>más de 30 años de trayectoria jurídica</strong>,
               ofreciendo un servicio cercano, ético y comprometido con cada persona y empresa que confía en mí.
             </p>

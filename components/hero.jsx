@@ -11,21 +11,24 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-b from-[#f5f7fa] to-white">
+    <section id="home" className="overflow-hidden bg-gradient-to-b from-background via-background to-secondary/70 pt-28 pb-16 md:pt-36 md:pb-28">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+        <div className="flex flex-col items-center gap-12 lg:flex-row lg:gap-16">
           {/* Text Content */}
-          <div className="flex-1 text-center md:text-left">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#003366] mb-6 text-balance">
-              Asesoramiento legal con más de 30 años de experiencia familiar
+          <div className="flex-1 text-center lg:text-left">
+            <p className="mb-5 text-xs font-medium tracking-[0.22em] text-muted-foreground uppercase">
+              Karina Alvarez Mendiara · Abogada
+            </p>
+            <h1 className="mb-6 font-serif text-5xl leading-[0.92] font-medium text-primary text-balance md:text-6xl lg:text-7xl">
+              Asesoramiento legal <span className="italic">para cada decisión.</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed text-pretty">
+            <p className="mb-8 max-w-xl text-lg leading-relaxed text-muted-foreground text-pretty md:text-xl md:leading-relaxed">
               En Estudio Jurídico Mendiara, continuamos una trayectoria dedicada a brindar soluciones legales personalizadas, con
               compromiso, cercanía y confianza.
             </p>
             <Button
               onClick={scrollToContact}
-              className="bg-[#003366] hover:bg-[#0055aa] text-white px-8 py-6 text-lg transition-all hover:scale-105 cursor-pointer"
+              className="rounded-sm bg-primary px-8 py-6 text-base tracking-[0.08em] text-primary-foreground uppercase transition-colors hover:bg-[#4e403c] cursor-pointer"
             >
               Contactame
             </Button>
@@ -33,9 +36,9 @@ export default function Hero() {
 
           {/* Attorney Photo */}
           <div className="flex-1 flex justify-center">
-            <div className="relative">
-              <div className="absolute inset-0 bg-[#003366] rounded-lg transform rotate-3"></div>
-              <img src="/personal.jpg" alt="Attorney" className="relative rounded-lg shadow-2xl w-full max-w-md" />
+            <div className="relative w-full max-w-md">
+              <div className="absolute inset-0 translate-x-3 translate-y-3 bg-primary md:translate-x-5 md:translate-y-5" />
+              <img src="/personal.jpg" alt="Karina Alvarez Mendiara en el estudio jurídico" className="relative w-full border border-[#e0dcd2] object-cover shadow-xl" />
             </div>
           </div>
         </div>

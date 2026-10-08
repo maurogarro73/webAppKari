@@ -37,7 +37,7 @@ export default function Header() {
           </button>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-7 xl:gap-8">
+          <nav className="hidden items-center gap-7 lg:flex xl:gap-8" aria-label="Navegación principal">
             <button
               onClick={() => scrollToSection('home')}
               className="text-xs font-medium tracking-[0.12em] text-foreground uppercase transition-colors hover:text-primary cursor-pointer"
@@ -73,12 +73,13 @@ export default function Header() {
               Noticias
             </Link>
 
-            <div className="flex items-center gap-4 ml-4">
+            <div className="ml-4 flex items-center gap-4" role="group" aria-label="Redes sociales">
               <a
                 href="https://www.youtube.com/@karinaluciaalvarezmendiara3813"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground transition-colors hover:text-primary"
+                aria-label="YouTube de Karina Alvarez Mendiara"
               >
                 <FaYoutube size={22} />
               </a>
@@ -87,6 +88,7 @@ export default function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground transition-colors hover:text-primary"
+                aria-label="Instagram de Karina Alvarez Mendiara"
               >
                 <FaInstagram size={22} />
               </a>
@@ -94,14 +96,22 @@ export default function Header() {
           </nav>
 
           {/* Mobile Menu Button */}
-          <Button variant="ghost" size="icon" className="text-primary hover:bg-secondary hover:text-primary lg:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="text-primary hover:bg-secondary hover:text-primary lg:hidden"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-navigation"
+            aria-label={isMenuOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'}
+          >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="mt-4 flex flex-col gap-4 border-t border-border pt-4 pb-2 lg:hidden">
+          <nav id="mobile-navigation" className="mt-4 flex flex-col gap-4 border-t border-border pt-4 pb-2 lg:hidden" aria-label="Navegación móvil">
             <button
               onClick={() => scrollToSection('home')}
               className="text-left text-sm font-medium tracking-[0.1em] text-foreground uppercase transition-colors hover:text-primary"
@@ -141,12 +151,13 @@ export default function Header() {
               Noticias
             </Link>
 
-            <div className="flex items-center gap-6 mt-2">
+            <div className="mt-2 flex items-center gap-6" role="group" aria-label="Redes sociales">
               <a
                 href="https://www.youtube.com/@karinaluciaalvarezmendiara3813"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground hover:text-primary"
+                aria-label="YouTube de Karina Alvarez Mendiara"
               >
                 <FaYoutube size={26} />
               </a>
@@ -155,6 +166,7 @@ export default function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground hover:text-primary"
+                aria-label="Instagram de Karina Alvarez Mendiara"
               >
                 <FaInstagram size={26} />
               </a>

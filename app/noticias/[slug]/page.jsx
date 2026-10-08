@@ -56,7 +56,7 @@ export default async function NoticiaDetailPage({ params }) {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-background">
+      <main id="main-content" className="min-h-screen bg-background" tabIndex={-1}>
         <section className="bg-primary pt-28 pb-14 text-primary-foreground md:pt-32 md:pb-18">
           <div className="mx-auto max-w-3xl px-4">
             <Link

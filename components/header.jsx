@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { FaYoutube, FaInstagram } from 'react-icons/fa';
@@ -8,8 +9,14 @@ import Link from 'next/link';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const scrollToSection = (id) => {
+    if (pathname !== '/') {
+      window.location.assign(`/#${id}`);
+      return;
+    }
+
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -18,61 +25,61 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
-      <div className="container mx-auto px-4 py-4">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/80 bg-background/95 backdrop-blur-sm">
+      <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center gap-3">
-            <img src="/logo.png" alt="Estudio Jurídico Mendiara" className="h-12 w-12" />
+          <button onClick={() => scrollToSection('home')} className="flex items-center gap-3 text-left cursor-pointer" aria-label="Ir al inicio">
+            <span className="font-serif text-4xl leading-none text-primary" aria-hidden="true">AM</span>
             <div className="flex flex-col">
-              <span className="font-serif text-lg font-bold text-[#003366]">Estudio Jurídico</span>
-              <span className="font-serif text-sm text-[#003366]">Mendiara</span>
+              <span className="font-serif text-xl leading-none text-primary md:text-2xl">Karina Alvarez Mendiara</span>
+              <span className="mt-1 text-[0.62rem] font-medium tracking-[0.24em] text-muted-foreground">ABOGADA</span>
             </div>
-          </div>
+          </button>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden items-center gap-7 lg:flex xl:gap-8" aria-label="Navegación principal">
             <button
               onClick={() => scrollToSection('home')}
-              className="text-[#003366] hover:text-[#0055aa] transition-colors font-medium cursor-pointer"
+              className="text-xs font-medium tracking-[0.12em] text-foreground uppercase transition-colors hover:text-primary cursor-pointer"
             >
               Inicio
             </button>
             <button
               onClick={() => scrollToSection('about')}
-              className="text-[#003366] hover:text-[#0055aa] transition-colors font-medium cursor-pointer"
+              className="text-xs font-medium tracking-[0.12em] text-foreground uppercase transition-colors hover:text-primary cursor-pointer"
             >
               Sobre mi
             </button>
             <button
               onClick={() => scrollToSection('services')}
-              className="text-[#003366] hover:text-[#0055aa] transition-colors font-medium cursor-pointer"
+              className="text-xs font-medium tracking-[0.12em] text-foreground uppercase transition-colors hover:text-primary cursor-pointer"
             >
               Servicios
             </button>
             <button
               onClick={() => scrollToSection('location')}
-              className="text-[#003366] hover:text-[#0055aa] transition-colors font-medium cursor-pointer"
+              className="text-xs font-medium tracking-[0.12em] text-foreground uppercase transition-colors hover:text-primary cursor-pointer"
             >
               Ubicación
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="text-[#003366] hover:text-[#0055aa] transition-colors font-medium cursor-pointer"
+              className="text-xs font-medium tracking-[0.12em] text-foreground uppercase transition-colors hover:text-primary cursor-pointer"
             >
               Contacto
             </button>
 
-            <Link href="/noticias" className="text-[#003366] hover:text-[#0055aa] transition-colors font-medium cursor-pointer">
+            <Link href="/noticias" className="text-xs font-medium tracking-[0.12em] text-foreground uppercase transition-colors hover:text-primary cursor-pointer">
               Noticias
             </Link>
 
-            <div className="flex items-center gap-4 ml-4">
+            <div className="ml-4 flex items-center gap-4" role="group" aria-label="Redes sociales">
               <a
                 href="https://www.youtube.com/@karinaluciaalvarezmendiara3813"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#003366] hover:text-[#0055aa] transition-colors"
+                className="text-foreground transition-colors hover:text-primary"
+                aria-label="YouTube de Karina Alvarez Mendiara"
               >
                 <FaYoutube size={22} />
               </a>
@@ -80,7 +87,8 @@ export default function Header() {
                 href="https://www.instagram.com/abogada_alvarezmendiarakarina"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#003366] hover:text-[#0055aa] transition-colors"
+                className="text-foreground transition-colors hover:text-primary"
+                aria-label="Instagram de Karina Alvarez Mendiara"
               >
                 <FaInstagram size={22} />
               </a>
@@ -88,59 +96,68 @@ export default function Header() {
           </nav>
 
           {/* Mobile Menu Button */}
-          <Button variant="ghost" size="icon" className="md:hidden text-[#003366]" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="text-primary hover:bg-secondary hover:text-primary lg:hidden"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-navigation"
+            aria-label={isMenuOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'}
+          >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 flex flex-col gap-4">
+          <nav id="mobile-navigation" className="mt-4 flex flex-col gap-4 border-t border-border pt-4 pb-2 lg:hidden" aria-label="Navegación móvil">
             <button
               onClick={() => scrollToSection('home')}
-              className="text-[#003366] hover:text-[#0055aa] transition-colors font-medium text-left"
+              className="text-left text-sm font-medium tracking-[0.1em] text-foreground uppercase transition-colors hover:text-primary"
             >
               Inicio
             </button>
             <button
               onClick={() => scrollToSection('about')}
-              className="text-[#003366] hover:text-[#0055aa] transition-colors font-medium text-left"
+              className="text-left text-sm font-medium tracking-[0.1em] text-foreground uppercase transition-colors hover:text-primary"
             >
               Sobre mi
             </button>
             <button
               onClick={() => scrollToSection('services')}
-              className="text-[#003366] hover:text-[#0055aa] transition-colors font-medium text-left"
+              className="text-left text-sm font-medium tracking-[0.1em] text-foreground uppercase transition-colors hover:text-primary"
             >
               Servicios
             </button>
             <button
               onClick={() => scrollToSection('location')}
-              className="text-[#003366] hover:text-[#0055aa] transition-colors font-medium text-left"
+              className="text-left text-sm font-medium tracking-[0.1em] text-foreground uppercase transition-colors hover:text-primary"
             >
               Ubicación
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="text-[#003366] hover:text-[#0055aa] transition-colors font-medium text-left"
+              className="text-left text-sm font-medium tracking-[0.1em] text-foreground uppercase transition-colors hover:text-primary"
             >
               Contacto
             </button>
 
             <Link
               href="/noticias"
-              className="text-[#003366] hover:text-[#0055aa] transition-colors font-medium text-left"
+              className="text-left text-sm font-medium tracking-[0.1em] text-foreground uppercase transition-colors hover:text-primary"
               onClick={() => setIsMenuOpen(false)}
             >
               Noticias
             </Link>
 
-            <div className="flex items-center gap-6 mt-2">
+            <div className="mt-2 flex items-center gap-6" role="group" aria-label="Redes sociales">
               <a
                 href="https://www.youtube.com/@karinaluciaalvarezmendiara3813"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#003366] hover:text-[#0055aa]"
+                className="text-foreground hover:text-primary"
+                aria-label="YouTube de Karina Alvarez Mendiara"
               >
                 <FaYoutube size={26} />
               </a>
@@ -148,7 +165,8 @@ export default function Header() {
                 href="https://www.instagram.com/abogada_alvarezmendiarakarina"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#003366] hover:text-[#0055aa]"
+                className="text-foreground hover:text-primary"
+                aria-label="Instagram de Karina Alvarez Mendiara"
               >
                 <FaInstagram size={26} />
               </a>

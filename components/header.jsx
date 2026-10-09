@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { FaYoutube, FaInstagram } from 'react-icons/fa';
@@ -10,10 +10,12 @@ import Link from 'next/link';
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
 
   const scrollToSection = (id) => {
     if (pathname !== '/') {
-      window.location.assign(`/#${id}`);
+      router.push(`/#${id}`);
+      setIsMenuOpen(false);
       return;
     }
 

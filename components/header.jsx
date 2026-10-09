@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { FaYoutube, FaInstagram } from 'react-icons/fa';
@@ -30,12 +31,19 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/80 bg-background/95 backdrop-blur-sm">
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-          <button onClick={() => scrollToSection('home')} className="flex items-center gap-3 text-left cursor-pointer" aria-label="Ir al inicio">
-            <span className="font-serif text-4xl leading-none text-primary" aria-hidden="true">AM</span>
-            <div className="flex flex-col">
+          <button onClick={() => scrollToSection('home')} className="flex cursor-pointer items-center gap-3 text-left" aria-label="Ir al inicio">
+            <Image
+              src="/03_logo-completo_un-color-bordo - AM.png"
+              alt=""
+              width={58}
+              height={39}
+              priority
+              className="h-10 w-auto md:h-11"
+            />
+            <span className="flex flex-col">
               <span className="font-serif text-xl leading-none text-primary md:text-2xl">Karina Alvarez Mendiara</span>
               <span className="mt-1 text-[0.62rem] font-medium tracking-[0.24em] text-muted-foreground">ABOGADA</span>
-            </div>
+            </span>
           </button>
 
           {/* Desktop Navigation */}

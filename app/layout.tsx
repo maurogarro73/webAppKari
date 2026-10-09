@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Cormorant_Garamond, Roboto } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import Script from 'next/script';
+import PageLoader from '@/components/page-loader';
 import './globals.css';
 
 const cormorant = Cormorant_Garamond({
@@ -172,6 +173,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`font-sans ${cormorant.variable} ${roboto.variable}`}>
+        <PageLoader />
         <a
           href="#main-content"
           className="fixed top-[-4rem] left-4 z-[60] rounded-sm bg-primary px-4 py-3 text-sm font-medium text-primary-foreground transition-[top] focus:top-4 focus:outline-none focus:ring-2 focus:ring-[#e0dcd2] focus:ring-offset-2 focus:ring-offset-background"

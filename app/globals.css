@@ -140,3 +140,26 @@
     outline-offset: 3px;
   }
 }
+
+@keyframes brand-loader {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: translateY(0) scale(0.98);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-0.35rem) scale(1);
+  }
+}
+
+.brand-loader {
+  animation: brand-loader 1.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-loader {
+    animation: none;
+  }
+}

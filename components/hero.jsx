@@ -1,6 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 
 export default function Hero() {
   const scrollToContact = () => {
@@ -38,7 +39,15 @@ export default function Hero() {
           <div className="flex-1 flex justify-center">
             <div className="relative w-full max-w-md">
               <div className="absolute inset-0 translate-x-3 translate-y-3 bg-primary md:translate-x-5 md:translate-y-5" />
-              <img src="/personal.jpg" alt="Karina Alvarez Mendiara en el estudio jurídico" className="relative w-full border border-[#e0dcd2] object-cover shadow-xl" />
+              <Image
+                src="/personal.jpg"
+                alt="Karina Alvarez Mendiara en el estudio jurídico"
+                width={1200}
+                height={900}
+                priority
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="relative w-full border border-[#e0dcd2] object-cover shadow-xl"
+              />
             </div>
           </div>
         </div>

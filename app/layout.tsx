@@ -20,13 +20,18 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
+  applicationName: 'Estudio Jurídico Mendiara',
   title: {
     default: 'Estudio Jurídico Mendiara | Derecho de Familia, Civil y Laboral',
     template: '%s | Estudio Jurídico Mendiara',
   },
   description:
     'Estudio Jurídico Mendiara en Santa Rosa, La Pampa. Especialistas en derecho de familia, civil, laboral e inmobiliario con atención personalizada y cercana.',
+  authors: [{ name: 'Karina Lucía Álvarez Mendiara' }],
+  creator: 'Estudio Jurídico Mendiara',
+  publisher: 'Estudio Jurídico Mendiara',
   generator: 'maurogarro.dev',
+  category: 'Servicios jurídicos',
   keywords: [
     'abogada',
     'abogado',
@@ -45,10 +50,21 @@ export const metadata: Metadata = {
     canonical: 'https://estudiojuridicomendiara.com.ar',
   },
   metadataBase: new URL('https://estudiojuridicomendiara.com.ar'),
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
   icons: {
-    icon: [{ url: '/favicon.ico' }, { url: '/logo-512.png', type: 'image/png', sizes: '512x512' }],
+    icon: [
+      { url: '/brand-icon-bordo.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', type: 'image/x-icon', sizes: '16x16 32x32 48x48' },
+    ],
     shortcut: '/favicon.ico',
-    apple: '/logo-512.png',
+    apple: [{ url: '/apple-touch-icon.png', type: 'image/png', sizes: '180x180' }],
   },
   openGraph: {
     title: 'Estudio Jurídico Mendiara | Derecho de Familia, Civil y Laboral',
@@ -61,14 +77,14 @@ export const metadata: Metadata = {
         url: 'https://estudiojuridicomendiara.com.ar/logo-512.png',
         width: 512,
         height: 512,
-        alt: 'Estudio Jurídico Mendiara - Asesoramiento Legal',
+        alt: 'Monograma de Estudio Jurídico Mendiara',
       },
     ],
     locale: 'es_AR',
     type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary',
     title: 'Estudio Jurídico Mendiara | Derecho de Familia, Civil y Laboral',
     description:
       'Asesoramiento legal integral y profesional. Derecho de familia, civil, laboral e inmobiliario en Santa Rosa, La Pampa.',

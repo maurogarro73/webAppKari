@@ -5,8 +5,21 @@ import Header from '@/components/header';
 import Footer from '@/components/footer';
 
 export const metadata = {
-  title: 'Noticias | Estudio Jurídico Mendiara',
+  title: 'Noticias',
   description: 'Cobertura y análisis de casos y novedades jurídicas.',
+  alternates: {
+    canonical: '/noticias',
+  },
+  openGraph: {
+    title: 'Noticias | Estudio Jurídico Mendiara',
+    description: 'Cobertura y análisis de casos y novedades jurídicas.',
+    url: '/noticias',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Noticias | Estudio Jurídico Mendiara',
+    description: 'Cobertura y análisis de casos y novedades jurídicas.',
+  },
 };
 
 export default function NoticiasPage() {

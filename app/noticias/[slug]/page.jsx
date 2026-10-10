@@ -10,6 +10,12 @@ import { NoticiaVideos } from '@/components/noticias/noticia-videos';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 
+const SITE_URL = 'https://estudiojuridicomendiara.com.ar';
+
+function toAbsoluteUrl(url) {
+  return new URL(url, SITE_URL).toString();
+}
+
 export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
 }
@@ -20,9 +26,38 @@ export async function generateMetadata({ params }) {
 
   if (!noticia) return { title: 'Noticia no encontrada' };
 
+  const url = toAbsoluteUrl(`/noticias/${slug}`);
+  const image = toAbsoluteUrl(noticia.cover || '/logo-512.png');
+  const isDefaultImage = !noticia.cover;
+
   return {
-    title: `${noticia.title} | Noticias`,
+    title: noticia.title,
     description: noticia.description,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      type: 'article',
+      url,
+      title: noticia.title,
+      description: noticia.description,
+      publishedTime: noticia.date ? `${noticia.date}T00:00:00-03:00` : undefined,
+      tags: noticia.tags,
+      images: [
+        {
+          url: image,
+          width: isDefaultImage ? 512 : undefined,
+          height: isDefaultImage ? 512 : undefined,
+          alt: isDefaultImage ? 'Monograma de Estudio Jurídico Mendiara' : noticia.title,
+        },
+      ],
+    },
+    twitter: {
+      card: isDefaultImage ? 'summary' : 'summary_large_image',
+      title: noticia.title,
+      description: noticia.description,
+      images: [image],
+    },
   };
 }
 
@@ -31,6 +66,35 @@ export default async function NoticiaDetailPage({ params }) {
   const noticia = getNoticiaBySlug(slug);
 
   if (!noticia) notFound();
+
+  const noticiaUrl = toAbsoluteUrl(`/noticias/${slug}`);
+  const articleImage = toAbsoluteUrl(noticia.cover || '/logo-512.png');
+  const publishedAt = noticia.date ? `${noticia.date}T00:00:00-03:00` : undefined;
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': noticiaUrl,
+    },
+    headline: noticia.title,
+    description: noticia.description,
+    image: articleImage,
+    ...(publishedAt && { datePublished: publishedAt, dateModified: publishedAt }),
+    author: {
+      '@type': 'Organization',
+      name: 'Estudio Jurídico Mendiara',
+      url: SITE_URL,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Estudio Jurídico Mendiara',
+      logo: {
+        '@type': 'ImageObject',
+        url: toAbsoluteUrl('/logo-512.png'),
+      },
+    },
+  };
 
   const toLocalDate = (value) => {
     if (value instanceof Date) return value;
@@ -106,6 +170,10 @@ export default async function NoticiaDetailPage({ params }) {
         </article>
       </main>
       <Footer />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
     </>
   );
 }

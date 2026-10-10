@@ -29,7 +29,7 @@ export function NoticiaCard({ slug, title, description, date, cover, tags }) {
   });
 
   return (
-    <Card className="flex flex-col overflow-hidden border-border/60 bg-card text-card-foreground shadow-sm transition-shadow hover:shadow-md">
+    <Card className="flex flex-col overflow-hidden border-border bg-card text-card-foreground shadow-none transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
       {cover && (
         <div className="relative aspect-video w-full overflow-hidden">
           <Image
@@ -46,8 +46,8 @@ export function NoticiaCard({ slug, title, description, date, cover, tags }) {
           <Calendar className="h-4 w-4" />
           <time dateTime={date}>{formattedDate}</time>
         </div>
-        <CardTitle className="text-lg leading-snug text-foreground">
-          <Link href={`/noticias/${slug}`} className="transition-colors hover:text-[#0055aa]">
+        <CardTitle className="font-serif text-2xl font-medium leading-snug text-primary">
+          <Link href={`/noticias/${slug}`} className="transition-colors hover:text-muted-foreground">
             {title}
           </Link>
         </CardTitle>
@@ -67,7 +67,7 @@ export function NoticiaCard({ slug, title, description, date, cover, tags }) {
       <CardFooter>
         <Link
           href={`/noticias/${slug}`}
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-[#0055aa]"
+          className="inline-flex items-center gap-1.5 text-xs font-medium tracking-[0.1em] text-primary uppercase transition-colors hover:text-muted-foreground"
         >
           Ver nota
           <ArrowRight className="h-4 w-4" />

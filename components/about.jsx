@@ -2,12 +2,15 @@ import { Scale, GraduationCap, Award } from 'lucide-react';
 
 export default function About() {
   return (
-    <section id="about" className="py-16 md:py-24 bg-white">
+    <section id="about" className="bg-card py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#003366] mb-8 text-center">Sobre mi</h2>
+          <div className="mb-10 text-center">
+            <p className="mb-3 text-xs font-medium tracking-[0.22em] text-muted-foreground uppercase">Trayectoria profesional</p>
+            <h2 className="font-serif text-4xl font-medium text-primary md:text-5xl">Sobre mí</h2>
+          </div>
 
-          <div className="prose prose-lg max-w-none text-gray-600 mb-12">
+          <div className="prose prose-lg mb-14 max-w-none text-muted-foreground prose-strong:text-primary">
             <p className="leading-relaxed mb-6">
               Soy <strong>Karina Lucía Alvarez Mendiara</strong>, abogada con más de 10 años de experiencia en el ejercicio
               profesional. Continúo con orgullo el legado familiar de <strong>más de 30 años de trayectoria jurídica</strong>,
@@ -28,21 +31,21 @@ export default function About() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="flex flex-col items-center text-center p-6 bg-[#f5f7fa] rounded-lg">
-              <Scale className="h-12 w-12 text-[#003366] mb-4" />
-              <h3 className="font-bold text-[#003366] mb-2">+10 años de experiencia</h3>
-              <p className="text-gray-600 text-sm">Trayectoria profesional y legado familiar en el ámbito jurídico.</p>
+          <div className="grid gap-5 md:grid-cols-3">
+            <div className="flex flex-col items-center border border-border bg-secondary p-7 text-center">
+              <Scale className="mb-5 h-9 w-9 text-primary" />
+              <h3 className="mb-2 font-serif text-2xl font-medium text-primary">+10 años de experiencia</h3>
+              <p className="text-sm leading-relaxed text-muted-foreground">Trayectoria profesional y legado familiar en el ámbito jurídico.</p>
             </div>
-            <div className="flex flex-col items-center text-center p-6 bg-[#f5f7fa] rounded-lg">
-              <GraduationCap className="h-12 w-12 text-[#003366] mb-4" />
-              <h3 className="font-bold text-[#003366] mb-2">Formación de excelencia</h3>
-              <p className="text-gray-600 text-sm">Abogada por la UNC y Magíster en Derecho Tributario (Universidad Austral).</p>
+            <div className="flex flex-col items-center border border-border bg-secondary p-7 text-center">
+              <GraduationCap className="mb-5 h-9 w-9 text-primary" />
+              <h3 className="mb-2 font-serif text-2xl font-medium text-primary">Formación de excelencia</h3>
+              <p className="text-sm leading-relaxed text-muted-foreground">Abogada por la UNC y Magíster en Derecho Tributario (Universidad Austral).</p>
             </div>
-            <div className="flex flex-col items-center text-center p-6 bg-[#f5f7fa] rounded-lg">
-              <Award className="h-12 w-12 text-[#003366] mb-4" />
-              <h3 className="font-bold text-[#003366] mb-2">Atención personalizada</h3>
-              <p className="text-gray-600 text-sm">Compromiso, cercanía y soluciones adaptadas a cada cliente.</p>
+            <div className="flex flex-col items-center border border-border bg-secondary p-7 text-center">
+              <Award className="mb-5 h-9 w-9 text-primary" />
+              <h3 className="mb-2 font-serif text-2xl font-medium text-primary">Atención personalizada</h3>
+              <p className="text-sm leading-relaxed text-muted-foreground">Compromiso, cercanía y soluciones adaptadas a cada cliente.</p>
             </div>
           </div>
         </div>

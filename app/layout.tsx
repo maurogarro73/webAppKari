@@ -1,18 +1,37 @@
 import type { Metadata } from 'next';
-import { GeistSans } from 'geist/font/sans';
-import { GeistMono } from 'geist/font/mono';
+import { Cormorant_Garamond, Roboto } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import Script from 'next/script';
+import PageLoader from '@/components/page-loader';
 import './globals.css';
 
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  variable: '--font-cormorant',
+  display: 'swap',
+  weight: ['400', '500', '600', '700'],
+});
+
+const roboto = Roboto({
+  subsets: ['latin'],
+  variable: '--font-roboto',
+  display: 'swap',
+  weight: ['400', '500', '700'],
+});
+
 export const metadata: Metadata = {
+  applicationName: 'Estudio Jurídico Mendiara',
   title: {
     default: 'Estudio Jurídico Mendiara | Derecho de Familia, Civil y Laboral',
     template: '%s | Estudio Jurídico Mendiara',
   },
   description:
     'Estudio Jurídico Mendiara en Santa Rosa, La Pampa. Especialistas en derecho de familia, civil, laboral e inmobiliario con atención personalizada y cercana.',
+  authors: [{ name: 'Karina Lucía Álvarez Mendiara' }],
+  creator: 'Estudio Jurídico Mendiara',
+  publisher: 'Estudio Jurídico Mendiara',
   generator: 'maurogarro.dev',
+  category: 'Servicios jurídicos',
   keywords: [
     'abogada',
     'abogado',
@@ -31,10 +50,21 @@ export const metadata: Metadata = {
     canonical: 'https://estudiojuridicomendiara.com.ar',
   },
   metadataBase: new URL('https://estudiojuridicomendiara.com.ar'),
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
   icons: {
-    icon: [{ url: '/favicon.ico' }, { url: '/logo-512.png', type: 'image/png', sizes: '512x512' }],
+    icon: [
+      { url: '/brand-icon-bordo.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', type: 'image/x-icon', sizes: '16x16 32x32 48x48' },
+    ],
     shortcut: '/favicon.ico',
-    apple: '/logo-512.png',
+    apple: [{ url: '/apple-touch-icon.png', type: 'image/png', sizes: '180x180' }],
   },
   openGraph: {
     title: 'Estudio Jurídico Mendiara | Derecho de Familia, Civil y Laboral',
@@ -47,14 +77,14 @@ export const metadata: Metadata = {
         url: 'https://estudiojuridicomendiara.com.ar/logo-512.png',
         width: 512,
         height: 512,
-        alt: 'Estudio Jurídico Mendiara - Asesoramiento Legal',
+        alt: 'Monograma de Estudio Jurídico Mendiara',
       },
     ],
     locale: 'es_AR',
     type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary',
     title: 'Estudio Jurídico Mendiara | Derecho de Familia, Civil y Laboral',
     description:
       'Asesoramiento legal integral y profesional. Derecho de familia, civil, laboral e inmobiliario en Santa Rosa, La Pampa.',
@@ -68,7 +98,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="es" data-scroll-behavior="smooth">
       <head>
         {/* Google Ads Tag */}
         <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-17674436925" />
@@ -158,7 +188,14 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
+      <body className={`font-sans ${cormorant.variable} ${roboto.variable}`}>
+        <PageLoader />
+        <a
+          href="#main-content"
+          className="fixed top-[-4rem] left-4 z-[60] rounded-sm bg-primary px-4 py-3 text-sm font-medium text-primary-foreground transition-[top] focus:top-4 focus:outline-none focus:ring-2 focus:ring-[#e0dcd2] focus:ring-offset-2 focus:ring-offset-background"
+        >
+          Saltar al contenido principal
+        </a>
         {children}
         <Analytics />
       </body>

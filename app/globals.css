@@ -1,88 +1,85 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @layer base, components, utilities;
-@import 'tailwindcss';
-@import 'tw-animate-css';
 @plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated color palette for law firm branding */
-  --background: oklch(0.985 0.005 240); /* #f5f7fa */
-  --foreground: oklch(0.25 0.02 240); /* #003366 */
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.25 0.02 240);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.25 0.02 240);
-  --primary: oklch(0.25 0.02 240); /* #003366 */
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.25 0.02 240);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-blue: #0055aa;
-  --accent-foreground: oklch(0.25 0.02 240);
+  /* Karina Alvarez Mendiara visual identity */
+  --background: #efece4;
+  --foreground: #323232;
+  --card: #ffffff;
+  --card-foreground: #323232;
+  --popover: #ffffff;
+  --popover-foreground: #323232;
+  --primary: #471d1f;
+  --primary-foreground: #efece4;
+  --secondary: #e0dcd2;
+  --secondary-foreground: #323232;
+  --muted: #e0dcd2;
+  --muted-foreground: #4e403c;
+  --accent: #786b63;
+  --accent-foreground: #efece4;
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.5rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --destructive-foreground: #ffffff;
+  --border: #d0c8bb;
+  --input: #d0c8bb;
+  --ring: #786b63;
+  --chart-1: #471d1f;
+  --chart-2: #786b63;
+  --chart-3: #4e403c;
+  --chart-4: #e0dcd2;
+  --chart-5: #323232;
+  --radius: 0.25rem;
+  --sidebar: #efece4;
+  --sidebar-foreground: #323232;
+  --sidebar-primary: #471d1f;
+  --sidebar-primary-foreground: #efece4;
+  --sidebar-accent: #e0dcd2;
+  --sidebar-accent-foreground: #323232;
+  --sidebar-border: #d0c8bb;
+  --sidebar-ring: #786b63;
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  --background: #323232;
+  --foreground: #efece4;
+  --card: #4e403c;
+  --card-foreground: #efece4;
+  --popover: #4e403c;
+  --popover-foreground: #efece4;
+  --primary: #efece4;
+  --primary-foreground: #471d1f;
+  --secondary: #4e403c;
+  --secondary-foreground: #efece4;
+  --muted: #4e403c;
+  --muted-foreground: #e0dcd2;
+  --accent: #786b63;
+  --accent-foreground: #ffffff;
   --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.439 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
+  --destructive-foreground: #ffffff;
+  --border: #786b63;
+  --input: #786b63;
+  --ring: #e0dcd2;
+  --chart-1: #efece4;
+  --chart-2: #e0dcd2;
+  --chart-3: #786b63;
+  --chart-4: #4e403c;
+  --chart-5: #471d1f;
+  --sidebar: #323232;
+  --sidebar-foreground: #efece4;
+  --sidebar-primary: #efece4;
+  --sidebar-primary-foreground: #471d1f;
+  --sidebar-accent: #4e403c;
+  --sidebar-accent-foreground: #efece4;
+  --sidebar-border: #786b63;
+  --sidebar-ring: #e0dcd2;
 }
 
 @theme inline {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-roboto);
+  --font-serif: var(--font-cormorant);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -132,5 +129,37 @@
   /* Added smooth scrolling for navigation */
   html {
     scroll-behavior: smooth;
+  }
+
+  section[id] {
+    scroll-margin-top: 6rem;
+  }
+
+  :where(a, button):focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
+  }
+}
+
+@keyframes brand-loader {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: translateY(0) scale(0.98);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-0.35rem) scale(1);
+  }
+}
+
+.brand-loader {
+  animation: brand-loader 1.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-loader {
+    animation: none;
   }
 }

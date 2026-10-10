@@ -1,6 +1,6 @@
 'use client';
 
-import { MessageCircle } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 import { Button } from '@/components/ui/button';
 
 export default function WhatsAppFloat() {
@@ -21,10 +21,11 @@ export default function WhatsAppFloat() {
     <Button
       onClick={handleClick}
       size="icon"
-      className="fixed bottom-6 right-6 h-14 w-14 rounded-full bg-[#25D366] hover:bg-[#20BA5A] shadow-lg hover:shadow-xl transition-all hover:scale-110 z-50 cursor-pointer"
-      aria-label="Contact via WhatsApp"
+      className="fixed right-6 bottom-6 z-50 h-14 w-14 cursor-pointer rounded-full border border-[#786b63] bg-primary text-primary-foreground shadow-[0_8px_24px_rgba(71,29,31,0.24)] transition-all hover:scale-105 hover:bg-[#4e403c] hover:shadow-[0_10px_28px_rgba(71,29,31,0.32)] focus-visible:ring-2 focus-visible:ring-[#e0dcd2] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+      aria-label="Contactar por WhatsApp"
+      title="Contactar por WhatsApp"
     >
-      <MessageCircle className="h-7 w-7 text-white" />
+      <FaWhatsapp className="h-6 w-6" aria-hidden="true" />
     </Button>
   );
 }

@@ -20,14 +20,14 @@ export function NoticiasSearch({ noticias }) {
 
   return (
     <div>
-      <div className="relative mb-8 max-w-md">
+      <div className="relative mb-10 max-w-md">
         <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
         <Input
           type="search"
           placeholder="Buscar por titulo, descripcion o tag..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="pl-10 border-border bg-card text-foreground placeholder:text-muted-foreground focus-visible:ring-primary"
+          className="rounded-none border-border bg-card pl-10 text-foreground placeholder:text-muted-foreground focus-visible:ring-primary"
         />
       </div>
 
@@ -43,7 +43,7 @@ export function NoticiasSearch({ noticias }) {
           </p>
         </div>
       ) : (
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((noticia) => (
             <NoticiaCard key={noticia.slug} {...noticia} />
           ))}
